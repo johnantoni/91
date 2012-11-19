@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Usage: 91 rails-backbone
+# Summary: Add backbone to our rails app.
+# Help: Add backbone to our rails app.
+
+set -e
+
+HOME="$PWD"
+APP="${PWD##*/}" # get app name (or directory name)
+
+echo "--- add backbone"
+
+echo "gem \"rails-backbone\"" >> Gemfile
+bundle install
+
+echo "--- run backbone setup"
+rails g backbone:install
+
+echo "--- init backbone"
+
+SOURCE="$_91_ROOT/share/rails/backbone.coffee"
+TARGET="$PWD/app/assets/javascripts/backbone/$APP.js.coffee"
+
+cat $SOURCE >> $TARGET
+
+# get app name capitalized (e.g. 'sofa' >> 'Sofa')
+APPNAME=$(echo "$APP" | python -c "print raw_input().capitalize()")
+
+echo "  $APPNAME.init()" >> $TARGET

@@ -6,12 +6,16 @@
 
 set -e
 
+echo "--- remove index.html"
+
+rm $PWD/public/index.html
+
 echo "--- add to gems"
 
 SOURCE="$_91_ROOT/share/rails/Gemfile"
 TARGET="$PWD/Gemfile"
 
-# note to self, > copy, >> append
+# note to self, > overwrite , >> append
 
 cat $SOURCE >> $TARGET
 
