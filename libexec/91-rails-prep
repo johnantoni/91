@@ -6,10 +6,6 @@
 
 set -e
 
-echo "--- remove index.html"
-
-rm $PWD/public/index.html
-
 echo "--- add to gems"
 
 SOURCE="$_91_ROOT/share/rails/Gemfile"
@@ -28,3 +24,9 @@ echo "vendor/bundle" >> .gitignore
 echo "--- init the git repository"
 
 git init
+
+echo "--- remove index.html and rails logo"
+
+rm $PWD/app/assets/images/rails.png
+rm $PWD/public/index.html
+
