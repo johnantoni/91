@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Usage: sub example
+# Summary: Open the example file in share/91/
+# Help: This will print out when you run `sub help example`.
+# You can have multiple lines even!
+#
+#    Show off an example indented
+#
+# And maybe start off another one?
+
+set -e
+
+ls $_91_ROOT"/share/91"
+tail $_91_ROOT"/share/91/example"
