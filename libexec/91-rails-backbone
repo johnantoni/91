@@ -28,6 +28,7 @@ echo "//= require hamlcoffee" >> $PWD/app/assets/javascripts/application.js
 echo "--- add backbone"
 
 echo "gem \"backbone-on-rails\"" >> Gemfile
+echo "gem \"eco\"" >> Gemfile
 
 bundle install
 
