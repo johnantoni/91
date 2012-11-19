@@ -5,6 +5,7 @@
 
 set -e
 
+
 echo "--- add jasmine"
 
 SOURCE="$_91_ROOT/share/rails/jasmine"
@@ -13,6 +14,7 @@ TARGET="$PWD/Gemfile"
 cat $SOURCE >> $TARGET
 
 bundle install
+
 
 echo "--- init jasmine"
 

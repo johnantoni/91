@@ -2,19 +2,40 @@
 # Usage: 91 rails-backbone
 # Summary: Add backbone to our rails app.
 # Help: Add backbone to our rails app.
+# Also adds haml_coffee_assets for the templates.
 
 set -e
 
 HOME="$PWD"
 APP="${PWD##*/}" # get app name (or directory name)
 
+
+echo "--- add haml_coffee_assets"
+
+SOURCE="$_91_ROOT/share/rails/haml.coffee"
+TARGET="$PWD/Gemfile"
+
+cat $SOURCE >> $TARGET
+
+bundle install
+
+
+echo "--- init haml_coffee_assets"
+
+echo "//= require hamlcoffee" >> $PWD/app/assets/javascripts/application.js
+
+
 echo "--- add backbone"
 
 echo "gem \"rails-backbone\"" >> Gemfile
+
 bundle install
 
+
 echo "--- run backbone setup"
+
 rails g backbone:install
+
 
 echo "--- init backbone"
 

@@ -6,6 +6,7 @@
 
 set -e
 
+
 echo "--- add to gems"
 
 SOURCE="$_91_ROOT/share/rails/Gemfile"
@@ -17,13 +18,16 @@ cat $SOURCE >> $TARGET
 
 bundle install
 
+
 echo "--- add to .gitignore"
 
 echo "vendor/bundle" >> .gitignore
 
+
 echo "--- init the git repository"
 
 git init
+
 
 echo "--- remove index.html and rails logo"
 
