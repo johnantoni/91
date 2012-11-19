@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Usage: 91 rails-jasmine
+# Summary: Add jasmine to our rails app.
+# Help: Add jasmine to our rails app.
+
+set -e
+
+echo "--- add jasmine"
+
+SOURCE="$_91_ROOT/share/rails/jasmine"
+TARGET="$PWD/Gemfile"
+
+cat $SOURCE >> $TARGET
+
+bundle install
+
+echo "--- init jasmine"
+
+rails g jasminerice:install
