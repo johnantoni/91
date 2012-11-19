@@ -1,0 +1,56 @@
+# compile less
+gem "therubyracer"
+
+# db
+gem "pg"
+
+# pagination
+gem "kaminari"
+
+# frontend
+gem "less-rails" #support LESS for twitter-bootstrap-rails
+gem "haml"
+gem 'coffee-rails', '~> 3.2.1' #problems with this in :assets when developing
+gem 'jquery-rails'
+
+# error logging
+gem "airbrake"
+
+# asset
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  #gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.0.3'
+  gem "twitter-bootstrap-rails" 
+end
+
+# toolkit
+group :development do
+  # tools
+  gem 'rails3-generators'
+  gem 'letter_opener'
+  gem 'debugger'
+
+  # livereload
+  gem 'guard-annotate'
+  gem 'guard-bundler'
+  gem 'rack-livereload'
+  gem 'guard-livereload'
+  gem 'guard-pow'
+  gem 'guard-spork'
+  gem 'rb-fsevent', '~> 0.9.1'
+
+  # mechanics
+  gem 'ruby_gntp'
+  gem 'yajl-ruby'
+  gem 'crack'
+
+  # trick out my console
+  gem 'hirb'
+  gem 'wirble'
+  gem 'awesome_print'
+  gem 'interactive_editor'
+end
+
+# server
+gem 'unicorn'

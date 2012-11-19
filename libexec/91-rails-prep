@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Usage: 91 rails-prep
+# Summary: Trick out or brand new rails project how we like it
+# Help: Appends our favourite gems to the project,
+# add to the .gitignore.
+
+set -e
+
+echo "--- add to gems"
+
+SOURCE="$_91_ROOT/share/rails/Gemfile"
+TARGET="$PWD/Gemfile"
+
+# note to self, > copy, >> append
+
+cat $SOURCE >> $TARGET
+
+bundle install
+
+echo "--- add to .gitignore"
+
+echo "vendor/bundle" >> .gitignore
+
+echo "--- init the git repository"
+
+git init
