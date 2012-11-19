@@ -27,7 +27,7 @@ echo "//= require hamlcoffee" >> $PWD/app/assets/javascripts/application.js
 
 echo "--- add backbone"
 
-echo "gem \"rails-backbone\"" >> Gemfile
+echo "gem \"backbone-on-rails\"" >> Gemfile
 
 bundle install
 
@@ -37,14 +37,16 @@ echo "--- run backbone setup"
 rails g backbone:install
 
 
-echo "--- init backbone"
+# ---------------------------------
 
-SOURCE="$_91_ROOT/share/rails/backbone.coffee"
-TARGET="$PWD/app/assets/javascripts/backbone/$APP.js.coffee"
+# echo "--- init backbone"
 
-cat $SOURCE >> $TARGET
+# SOURCE="$_91_ROOT/share/rails/backbone.coffee"
+# TARGET="$PWD/app/assets/javascripts/backbone/$APP.js.coffee"
+
+# cat $SOURCE >> $TARGET
 
 # get app name capitalized (e.g. 'sofa' >> 'Sofa')
-APPNAME=$(echo "$APP" | python -c "print raw_input().capitalize()")
+# APPNAME=$(echo "$APP" | python -c "print raw_input().capitalize()")
 
-echo "  $APPNAME.init()" >> $TARGET
+# echo "  $APPNAME.init()" >> $TARGET
